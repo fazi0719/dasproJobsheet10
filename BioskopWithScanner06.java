@@ -1,18 +1,17 @@
 import java.util.Scanner;
+
 public class BioskopWithScanner06 {
-   
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner (System.in);
+        Scanner sc = new Scanner(System.in);
 
         int baris, kolom, menu;
         String nama, next;
 
-        String [][] penonton = new String[4][2];
-
-        
+        String[][] penonton = new String[4][2];
 
         while (true) {
-        System.out.println("=========================");
+            System.out.println("=========================");
             System.out.println("        MENU BIOSKOP     ");
             System.out.println("=========================");
             System.out.println("1. Input data penonton");
@@ -22,7 +21,7 @@ public class BioskopWithScanner06 {
             menu = sc.nextInt();
             sc.nextLine();
 
-        switch (menu) {
+            switch (menu) {
 
                 case 1:
                     while (true) {
@@ -34,24 +33,22 @@ public class BioskopWithScanner06 {
                         kolom = sc.nextInt();
                         sc.nextLine();
 
-        penonton [baris-1] [kolom-1] = nama;
-        System.out.print("Input penonton lainnya? (y/n): ");
-    next = sc.nextLine();
+                        penonton[baris - 1][kolom - 1] = nama;
+                        System.out.print("Input penonton lainnya? (y/n): ");
+                        next = sc.nextLine();
 
-if (next.equalsIgnoreCase("n")) {
-break;
-}
-break;
+                        if (next.equalsIgnoreCase("n")) {
+                            break;
+                        }
+                        break;
                     }
-case 2:
+                case 2:
                     System.out.println("\nDaftar Penonton:");
                     for (int i = 0; i < penonton.length; i++) {
                         for (int j = 0; j < penonton[i].length; j++) {
-                            if (penonton[i][j] == null) {
-                                System.out.print("***\t");
-                            } else {
+                            
                                 System.out.print(penonton[i][j] + "\t");
-                            }
+                            
                         }
                         System.out.println();
                     }
@@ -62,7 +59,7 @@ case 2:
                     // ===== KELUAR =====
                     System.out.println("Terima kasih!");
                     return;
-}
-    }
+            }
         }
+    }
 }
