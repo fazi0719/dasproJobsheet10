@@ -25,7 +25,6 @@ public class BioskopWithScanner06 {
         switch (menu) {
 
                 case 1:
-                    // ===== MENU INPUT DATA =====
                     while (true) {
                         System.out.print("Masukkan nama: ");
                         nama = sc.nextLine();
@@ -45,7 +44,6 @@ break;
 break;
                     }
 case 2:
-                    // ===== MENU TAMPILKAN DATA =====
                     System.out.println("\nDaftar Penonton:");
                     for (int i = 0; i < penonton.length; i++) {
                         for (int j = 0; j < penonton[i].length; j++) {
