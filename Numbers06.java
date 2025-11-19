@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 public class Numbers06 {
     public static void main(String[] args) {
@@ -13,5 +14,8 @@ public class Numbers06 {
     System.out.println(" Panjang baris 1 : " + myNumbers[1].length);
     System.out.println(" Panjang baris 2 : " + myNumbers[2].length);
 
+    for (int i = 0; i < myNumbers.length; i++) {
+    System.out.println(Arrays.toString(myNumbers[i]));
+} 
     }
 }
