@@ -2,6 +2,9 @@ import java.util.Scanner;
 
 public class BioskopWithScanner06 {
 
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -52,7 +55,7 @@ public class BioskopWithScanner06 {
 
         // ====== CEK APAKAH KURSI SUDAH TERISI ======
         if (penonton[baris - 1][kolom - 1] != null) {
-            System.out.println("⚠ Kursi baris " + baris + ", kolom " + kolom +
+            System.out.println("Kursi baris " + baris + ", kolom " + kolom +
                     " sudah terisi oleh " + penonton[baris - 1][kolom - 1] + "!");
             System.out.println("Silakan pilih baris dan kolom lain.\n");
 
@@ -92,9 +95,11 @@ public class BioskopWithScanner06 {
                     System.out.println("\nDaftar Penonton:");
                     for (int i = 0; i < penonton.length; i++) {
                         for (int j = 0; j < penonton[i].length; j++) {
-                            
+                           if (penonton[i][j] == null) {
+                                System.out.print("***\t");
+                            } else {  
                                 System.out.print(penonton[i][j] + "\t");
-                            
+                            }  
                         }
                         System.out.println();
                     }
