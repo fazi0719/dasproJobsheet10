@@ -27,10 +27,28 @@ public class BioskopWithScanner06 {
                     while (true) {
                         System.out.print("Masukkan nama: ");
                         nama = sc.nextLine();
-                        System.out.print("Masukkan baris: ");
-                        baris = sc.nextInt();
-                        System.out.print("Masukkan kolom: ");
-                        kolom = sc.nextInt();
+
+                        while (true) {
+                            System.out.print("Masukkan baris: ");
+                            baris = sc.nextInt();
+
+                            if (baris >= 1 && baris <= 4) {
+                                break;
+                            } else {
+                                System.out.println("Baris tidak tersedia (harus 1-4)");
+                            }
+                        }
+                        
+                        while (true) {
+                            System.out.print("Masukkan kolom: ");
+                            kolom = sc.nextInt();
+
+                            if (kolom >= 1 && kolom <= 2) {
+                                break;
+                            } else {
+                                System.out.println("Kolom tidak tersedia (harus 1-2)");
+                            }
+                        }
                         sc.nextLine();
 
                         penonton[baris - 1][kolom - 1] = nama;
