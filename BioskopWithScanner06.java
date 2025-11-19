@@ -27,36 +27,64 @@ public class BioskopWithScanner06 {
                     while (true) {
                         System.out.print("Masukkan nama: ");
                         nama = sc.nextLine();
-
-                        while (true) {
-                            System.out.print("Masukkan baris: ");
-                            baris = sc.nextInt();
-
-                            if (baris >= 1 && baris <= 4) {
-                                break;
-                            } else {
-                                System.out.println("Baris tidak tersedia (harus 1-4)");
-                            }
-                        }
                         
-                        while (true) {
-                            System.out.print("Masukkan kolom: ");
-                            kolom = sc.nextInt();
+                         // ====== PILIH BARIS ======
+                    System.out.print("Pilih baris (1, 2, 3, 4): ");
+                    baris = sc.nextInt();
+                        // menghandle baris
+                         while (baris < 1 || baris > 4) {
+            System.out.println("Baris tidak tersedia!");
+            System.out.print("Pilih baris (1, 2, 3, 4): ");
+            baris = sc.nextInt();
+        }
 
-                            if (kolom >= 1 && kolom <= 2) {
-                                break;
-                            } else {
-                                System.out.println("Kolom tidak tersedia (harus 1-2)");
-                            }
-                        }
-                        sc.nextLine();
+        // ====== PILIH KOLOM ======
+        System.out.print("Pilih kolom (1, 2): ");
+        kolom = sc.nextInt();
+
+        while (kolom < 1 || kolom > 2) {
+            System.out.println("Kolom tidak tersedia!");
+            System.out.print("Pilih kolom (1, 2): ");
+            kolom = sc.nextInt();
+        }
+
+        sc.nextLine(); // hapus newline
+
+        // ====== CEK APAKAH KURSI SUDAH TERISI ======
+        if (penonton[baris - 1][kolom - 1] != null) {
+            System.out.println("⚠ Kursi baris " + baris + ", kolom " + kolom +
+                    " sudah terisi oleh " + penonton[baris - 1][kolom - 1] + "!");
+            System.out.println("Silakan pilih baris dan kolom lain.\n");
+
+            // MINTA INPUT ULANG
+            // baris baru
+            System.out.print("Pilih baris (1, 2, 3, 4): ");
+            baris = sc.nextInt();
+            while (baris < 1 || baris > 4) {
+                System.out.println("Baris tidak tersedia!");
+                System.out.print("Pilih baris (1, 2, 3, 4): ");
+                baris = sc.nextInt();
+            }
+
+            // kolom baru
+            System.out.print("Pilih kolom (1, 2): ");
+            kolom = sc.nextInt();
+            while (kolom < 1 || kolom > 2) {
+                System.out.println("Kolom tidak tersedia!");
+                System.out.print("Pilih kolom (1, 2): ");
+                kolom = sc.nextInt();
+            }
+            sc.nextLine();
+        }
+
 
                         penonton[baris - 1][kolom - 1] = nama;
-                        System.out.print("Input penonton lainnya? (y/n): ");
+                        System.out.print("Kursi berhasil dipesan!\n ");
+                              System.out.print("Input penonton lainnya? (y/n): ");
                         next = sc.nextLine();
 
-                        if (next.equalsIgnoreCase("n")) {
-                            break;
+                    if (next.equalsIgnoreCase("n")) {
+                        break;
                         }
                         break;
                     }
