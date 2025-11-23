@@ -2,7 +2,7 @@
 
 public class TUGAS {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         
         int jml_responden = 10, jml_pertanyaan = 6;
         double rata, rataKeseluruhan;
@@ -15,7 +15,7 @@ public class TUGAS {
             System.out.println("Responden ke-" + (i + 1));
             for (int j = 0; j < jml_pertanyaan; j++) {
                 System.out.print("  Nilai pertanyaan " + (j + 1) + " : ");
-                hasilSurvei[i][j] = input.nextInt();
+                hasilSurvei[i][j] = sc.nextInt();
             }
             System.out.println();
         }
@@ -39,7 +39,7 @@ public class TUGAS {
             for (int i = 0; i < jml_responden; i++) {
                 total += hasilSurvei[i][j];
             }
-            rata =  total / jml_pertanyaan;
+            rata =  total / jml_responden;
             System.out.println("  Pertanyaan " + (j + 1) + ": " + rata);
         }
     //menampilkan rata rata untuk nilai secara keseluruhan
